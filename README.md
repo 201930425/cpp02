@@ -8,7 +8,7 @@
 
 classDiagram
 
-&nbsp;   class Company {
+&nbsp;   class Company{
 
 &nbsp;       -string name
 
@@ -22,7 +22,7 @@ classDiagram
 
 &nbsp;   
 
-&nbsp;   class Product {
+&nbsp;   class Product{
 
 &nbsp;       -string name
 
@@ -38,7 +38,7 @@ classDiagram
 
 &nbsp;   
 
-&nbsp;   class Invoice {
+&nbsp;   class Invoice{
 
 &nbsp;       -int invoiceNumber
 
