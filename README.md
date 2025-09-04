@@ -2,65 +2,127 @@
 
 
 
-%%2025년도 2학기 c++ 프로그래밍 수업 원격 리포지토리
+%%2025년도 2학기 C++ 프로그래밍 수업 원격 리포지토리
+
+
+
+
 
 
 
 classDiagram
 
-&nbsp;   class Company{
 
-&nbsp;       -string name
 
-&nbsp;       -string telephone
+    class Company {
 
-&nbsp;       +Company(string name, string telephone)
 
-&nbsp;       +void print() const
 
-&nbsp;   }
+        -string name
 
-&nbsp;   
 
-&nbsp;   class Product{
 
-&nbsp;       -string name
+        -string telephone
 
-&nbsp;       -double unitPrice
 
-&nbsp;       +Product(string name, double unitPrice)
 
-&nbsp;       +~Product()
+        +Company(string name, string telephone)
 
-&nbsp;       +double getPrice() const
 
-&nbsp;   }
 
-&nbsp;   
+        +print() const void
 
-&nbsp;   class Invoice{
 
-&nbsp;       -int invoiceNumber
 
-&nbsp;       -double invoiceTotal
+    }
 
-&nbsp;       -Company company
 
-&nbsp;       +Invoice(int invoiceNumber, string name, string phone)
 
-&nbsp;       +~Invoice()
+ 
 
-&nbsp;       +void add(int quantity, Product product)
 
-&nbsp;       +void print() const
 
-&nbsp;   }
+    class Product {
 
-&nbsp;   
 
-&nbsp;   Invoice \*-- Company : composition
 
-&nbsp;   Invoice ..> Product : dependency
+        -string name
+
+
+
+        -double unitPrice
+
+
+
+        +Product(string name, double unitPrice)
+
+
+
+        +~Product()
+
+
+
+        +getPrice() const double
+
+
+
+    }
+
+
+
+ 
+
+
+
+    class Invoice {
+
+
+
+        -int invoiceNumber
+
+
+
+        -double invoiceTotal
+
+
+
+        -Company company
+
+
+
+        +Invoice(int invoiceNumber, string name, string phone)
+
+
+
+        +~Invoice()
+
+
+
+        +add(int quantity, Product product) void
+
+
+
+        +print() const void
+
+
+
+    }
+
+
+
+ 
+
+
+
+    Invoice \*-- Company : composition (has-a)
+
+
+
+    Invoice ..> Product : dependency (use-a)
+
+
 
 ```
+
+
 
