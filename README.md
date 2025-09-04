@@ -114,7 +114,7 @@ classDiagram
 
 
 
-    Invoice \*-- Company : composition (has-a)
+    Invoice *-- Company : composition (has-a)
 
 
 
