@@ -1,7 +1,4 @@
-﻿/**************************************************************
- * Invoice 클래스의 인터페이스 파일                           *
- **************************************************************/
-#ifndef INVOICE_H
+﻿#ifndef INVOICE_H
 #define INVOICE_H
 #include "product.h"
 #include "company.h"

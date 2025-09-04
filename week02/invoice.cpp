@@ -1,27 +1,16 @@
-﻿/**************************************************************
- * Invoice 클래스의 구현 파일                                 *
- **************************************************************/
-#include "invoice.h"
+﻿#include "invoice.h"
 
-// 생성자
-//Invoice::Invoice(int invoiceNumber)
-//: invoiceNumber(invoiceNumber), invoiceTotal(0.0)
-//{  
-//}
 Invoice::Invoice(int invoiceNumber, string name, string phone)
 	: invoiceNumber(invoiceNumber), company(name,phone), invoiceTotal(0.0)
 {
 }
-// 소멸자
 Invoice::~Invoice() 
 {
 }
-// add 멤버 함수
 void Invoice::add(int quantity, Product product)
 {
   invoiceTotal += quantity * product.getPrice();
 }
-// print 멤버 함수
 void Invoice::print() const
 {
 	company.print();

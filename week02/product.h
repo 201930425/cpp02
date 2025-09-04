@@ -1,7 +1,4 @@
-﻿/**************************************************************
- * Product 클래스의 인터페이스 파일                           *
- **************************************************************/
-#ifndef PRODUCT_H
+﻿#ifndef PRODUCT_H
 #define PRODUCT_H
 #include <string>
 #include <iostream>
