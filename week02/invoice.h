@@ -8,9 +8,9 @@ class Invoice
   private:
     int invoiceNumber;
     double invoiceTotal; 
-    Company company;
+    Company company; //has-a
   public: 
-    Invoice(int invoiceNumber, string name, string phone);
+    Invoice(int invoiceNumber, string name, string phone); //composition
     //Invoice(int invoiceNumber, Company company);
     ~Invoice(); 
     void add(int quantity, Product product);
