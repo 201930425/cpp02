@@ -5,15 +5,15 @@ using namespace std;
 class Pokemon
 {
 public:
-	Pokemon() { cout << " Default(Pokemon) constructor\n"; }
-	~Pokemon() { cout << "Base Class (Pokemon) Destructor\n"; }
+	Pokemon() { cout << "Default(Pokemon) constructor\n"; }
+	virtual ~Pokemon() { cout << "Base Class (Pokemon) Destructor\n"; } //prevent momory leak
 	virtual void attack() const { cout << "Attack!" << endl; }
 };
 
 class Pikachu : public Pokemon  // is-a
 {
 public:
-	Pikachu() { cout << " Default(Pikachu) constructor\n"; }
+	Pikachu() { cout << "Default(Pikachu) constructor\n"; }
 	~Pikachu() { cout << "Derived Class (Pikachu) Destructor\n"; }
 	void attack() const { cout << "Electric Attack~" << endl; }
 };
