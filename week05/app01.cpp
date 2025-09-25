@@ -18,9 +18,15 @@ public:
 
 int main()
 {
-	Animal a;
-	Dog d;
-	cout << typeid(d).name() << endl;
-	d.makeSound();
+	Animal* pa = new Animal();
+	pa->makeSound();
+	delete pa; //객체 삭제
+	pa = nullptr; //포인터 자리 삭제
+	
+	pa = new Dog();
+	pa->makeSound();
+	delete pa; 
+	pa = nullptr;
+
 	return 0;
 }
