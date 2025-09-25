@@ -20,8 +20,9 @@ int main()
 {
 	Animal* pa =  new Dog(); //upcasting
 	pa->makeSound();
+	cout << pa << endl;
 
-	Cat* pc = (Cat*)pa; //Dangerous begavior
+	Cat* pc = (Cat*)pa; //Dangerous begavior!!!
 	pc->makeSound();
 	cout << pc << endl;
 	delete pc;
