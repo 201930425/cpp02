@@ -1,44 +1,24 @@
 ```mermaid
 
-
-
 classDiagram
+    class Pokemon {
+        +Pokemon()
+        +~Pokemon() virtual
+        +attack() virtual void
+    }
+    
+    class Pikachu {
+        +Pikachu()
+        +~Pikachu()
+        +attack() void
+    }
+    
+    class Squirtle {
+        +Squirtle()
+        +~Squirtle()
+        +attack() void
+    }
 
-&nbsp;   class Pokemon {
-
-&nbsp;       +Pokemon()
-
-&nbsp;       +virtual ~Pokemon()
-
-&nbsp;       +virtual void attack() const
-
-&nbsp;   }
-
-&nbsp;   class Pikachu {
-
-&nbsp;       +Pikachu()
-
-&nbsp;       +~Pikachu()
-
-&nbsp;       +void attack() const
-
-&nbsp;   }
-
-&nbsp;   class Squirtle {
-
-        +Squirtle()
-
-        +~Squirtle()
-
-        +void attack() const
-
-    }
-
-
-
-
-
-&nbsp;   Pokemon <|-- Pikachu
-
-&nbsp;   ```
-
+    Pokemon <|-- Pikachu : inheritance
+    Pokemon <|-- Squirtle : inheritance
+   ```
