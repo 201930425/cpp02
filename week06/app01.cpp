@@ -29,6 +29,16 @@ public:
 		int i = this->Imaginary + right.Imaginary;
 		
 		return Complex(r,i);
+		//return Complex(r, this->Imaginary) //가능하나 수학적으로 문제가 됨
+	}
+	Complex operator++(int) { //후위연산
+		Complex previous(this->real, this->Imaginary);
+		this->real = this->real + 1;
+		return previous;
+	}
+	Complex operator++() { //전위연산
+		this->real++;
+		return Complex(this->real, this->Imaginary);
 	}
 };
 
@@ -43,6 +53,15 @@ int main() {
 	cout << c1.getReal() << "+" << c1.getsetImaginary() << "i" << endl;
 	cout << c2.getReal() << "+" << c2.getsetImaginary() << "i" << endl;
 
-	Complex c3 = c1 + c2;
+	Complex c3 = c1 + c2; //Complex c3 = c1.operator+(c2);
+	// cout << c3.getReal() << "+" << c3.getsetImaginary() << "i" << endl;
+	
+	/*Complex c4 = c3++;*/
+	Complex c4 = ++c3;
+	
+	//cout << c3++; // real 값만 1증가
 	cout << c3.getReal() << "+" << c3.getsetImaginary() << "i" << endl;
+	cout << c4.getReal() << "+" << c4.getsetImaginary() << "i" << endl;
+
+	return 0;
 }
