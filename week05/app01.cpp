@@ -6,7 +6,7 @@ using namespace std;
 class Animal { // abstract class
 public:
 	//void virtual makeSound() { cout << "cry~~\n"; }
-	virtual void makeSound();
+	virtual void makeSound()=0;
 };
 class Dog : public Animal {
 public:
