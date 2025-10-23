@@ -23,12 +23,12 @@ public:
 	int getsetImaginary() const {
 		return Imaginary;
 	}
-	Complex operator+(const Complex& right) {
+	/*Complex operator+(const Complex& right) {
 		int r = this->real + right.real;
 		int i = this->Imaginary + right.Imaginary;
 
 		return Complex(r, i);
-	}
+	}*/
 	Complex operator++(int) { //후위연산
 		Complex previous(this->real, this->Imaginary);
 		this->real = this->real + 1;
@@ -40,9 +40,16 @@ public:
 	}
 };
 
-ostream& operator<<(ostream& o, Complex right) {
+ostream& operator<<(ostream& o,const Complex right) {
 	o << right.getReal() << "+" << right.getsetImaginary() << "i";
 	return o;
+}
+
+Complex operator+(const Complex& left,const Complex& right) {
+	int r = left.getReal() + right.getReal();
+	int i = left.getsetImaginary() + right.getsetImaginary();
+
+	return Complex(r, i);
 }
 
 
