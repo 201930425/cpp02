@@ -6,3 +6,18 @@ MyException::MyException(int errorCode, const char* errorMessage, DynamicArray* 
 {
 	//cout << "예외 객체 생성\n";
 }
+
+int MyException::getErrorCode() const
+{
+	return errorCode;
+}
+
+const char* MyException::getErrorMessage() const
+{
+	return errorMessage;
+}
+
+DynamicArray* MyException::getErrorAddress() const
+{
+	return errorAddress;
+}

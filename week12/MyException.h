@@ -10,5 +10,8 @@ private:
 	DynamicArray* errorAddress;
 public:
 	MyException(int errorCode, const char* errorMessage, DynamicArray* errorAddress);
+	int getErrorCode() const;
+	const char* getErrorMessage() const;
+	DynamicArray* getErrorAddress() const;
 
 };
