@@ -10,6 +10,7 @@ private:
 	DynamicArray* errorAddress; //has-a
 public:
 	MyException(int errorCode, const char* errorMessage, DynamicArray* errorAddress);
+	virtual ~MyException();
 	int getErrorCode() const;
 	const char* getErrorMessage() const;
 	DynamicArray* getErrorAddress() const;

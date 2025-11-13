@@ -7,6 +7,10 @@ MyException::MyException(int errorCode, const char* errorMessage, DynamicArray* 
 	//cout << "예외 객체 생성\n";
 }
 
+MyException::~MyException()
+{
+}
+
 int MyException::getErrorCode() const
 {
 	return errorCode;
