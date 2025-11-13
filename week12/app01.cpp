@@ -22,7 +22,7 @@ int main()
         
     }
     catch (const MyException& err) {
-        cout << "에러코드 :" << err.getErrorCode()<<"\n";
+        cout << "에러코드 :" << err.getErrorCode() << "\n";
         cout << "에러메세지 :" << err.getErrorMessage() << "\n";
         cout << "에러 메모리 번지 주소 :" << err.getErrorAddress() << "\n";
     }
