@@ -2,21 +2,31 @@
 using namespace std;
 
 template <typename T>
-T bigger(T first, T second)
+void display(T value)
 {
-	if (first > second) {
-		return first;
-	}
-	return second;
+	cout << "Generic display :" << value << '\n';
+}
+
+template <>
+void display<char>(char value)
+{
+	cout << "Specialized display for char :" << value << '\n';
+}
+
+template <>
+void display<const char*>(const char* value)
+{
+	cout << "Specialized display for c style string :" << value << '\n';
 }
 int main()
 {
-	int i1 = 11;
-	double d1 = 11.97;
-	//cout << bigger(i1, d1) << endl;
-	cout << bigger<double>(i1, d1) << endl; //명시적 호출
-	cout << bigger<double>(55.7, 11.9) << endl;
-	cout << bigger(55.7, 11.9) << endl;
-	cout << bigger<string>("Hxllo", "Hi") << endl;
+	//Generic
+	display(50);
+	display(2.17);
+	//Specialized
+	display('2');
+	display("2");
+	display("Hi");
+	
 	return 0;
 }
