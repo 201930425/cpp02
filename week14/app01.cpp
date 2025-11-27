@@ -7,8 +7,14 @@ private:
 public:
 	Pokemon(): hp(1),name("무명") {};
 	Pokemon(int hp,string name) :hp(hp),name(name) {
-		cout << name<<"포켓몬 생성됨\n"; 
+		cout << name <<" 포켓몬 생성됨\n"; 
 	};
+	int getHp() const {
+		return hp;
+	}
+	string getName() const {
+		return name;
+	}
 	//void attack() = 0;
 	//virtual void attack() = 0;
 };
@@ -20,19 +26,24 @@ public:
 //class Squirtle : public Pokemon {
 //public:
 //	Squirtle() {};
-//	void attack() { "anfeovh공격\n"; };
+//	void attack() { "물대포공격\n"; };
 //};
+
+ostream& operator<<(ostream& o, const Pokemon right) {
+		o << right.getName() << "(hp: " << right.getHp() << ")\n";
+		return o;
+}
+
 int main()
 {
-	//Pokemon p1; // 추상클래스의 인스턴스
-	//Pokemon *pikachu = new Pikachu(); // upcasting
-	//Pikachu p1;
-	//Squirtle s1;
+	typedef Stack<Pokemon> PokemonStack;
+	typedef Stack<int> iStack;
+
 	Pokemon pikachu;
 	Pokemon squirtle(100,"꼬부기");
 
-  Stack<int> stacki(10);
-  Stack<Pokemon> stackp(3);
+	iStack stacki(10);
+	PokemonStack stackp(3);
   Stack<double> stackd(3);
   stackp.push(pikachu);
   stackp.push(squirtle);
@@ -42,7 +53,8 @@ int main()
   stacki.push(3);
   cout << stacki.pop() << endl;
   cout << stacki.pop() << endl;
-  cout << stackd.pop() << endl; // stack is empty!
+  //cout << stackd.pop() << endl; // stack is empty!
+
   cout << stackp.pop() << endl;
   return 0;
 }
